@@ -1,0 +1,47 @@
+def operation(type):
+
+    def sum_two(x, y):
+        return x + y
+
+    def multiply_two(x, y):
+
+        return x * y
+
+    if type == '+':
+        return sum_two
+    elif type == '*':
+        return multiply_two
+    else:
+        raise ValueError('Supported operations are \'+\' and \'*\'')
+
+
+sum_operation = operation('+')
+print(sum_operation)
+print(sum_operation(1, 6))
+
+
+def calculator():
+    result = 0
+
+    def add(x):
+        nonlocal result
+        result += x
+
+    def multiply(x):
+        nonlocal result
+        result *= x
+
+    def get_result():
+        return result
+
+    # following line is called closure
+    return (add, multiply, get_result)
+
+
+(add1, multiply1, get_result1) = calculator()
+(add2, multiply2, get_result2) = calculator()
+
+add1(3)
+add1(2)
+multiply1(2.5)
+print(get_result1() )

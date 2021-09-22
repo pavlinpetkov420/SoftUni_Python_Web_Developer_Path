@@ -1,0 +1,11 @@
+from project.food.dessert import Dessert
+
+
+class Cake(Dessert):
+
+    CALORIES = 1000
+    GRAMS = 250
+    PRICE = 5
+
+    def __init__(self, name: str):
+        super().__init__(name, Cake.PRICE, Cake.GRAMS, Cake.CALORIES)

@@ -1,0 +1,2 @@
+get_msg(('', '')) returned asdasdaget_msg(('', '')) returned asdasda
+get_msg(('', '')) returned asdasda
